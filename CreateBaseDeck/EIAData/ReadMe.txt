@@ -5,6 +5,7 @@ Demand data: EIA 861 - Sales_ult_customer (States- NC > Total Sales)
 
 ------Exisiting Capacity
 Generator data: EIA 860 - Operating
+Emissions: https://www.epa.gov/statelocalenergy/download-state-inventory-and-projection-tool?token=Bnq8AgRdJDERzYxCFHh6OphVsRlkP51C-kS3vP0mCJE
 
 ------Usefull Links Costs
 https://www.eia.gov/electricity/generatorcosts/
