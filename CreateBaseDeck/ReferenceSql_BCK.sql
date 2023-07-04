@@ -465,7 +465,7 @@ CREATE TABLE "PlanningReserveMargin" (
 	`regions`	text,
 	`reserve_margin`	REAL,
 	PRIMARY KEY(regions),
-	FOREIGN KEY(`regions`) REFERENCES regions
+
 );
 
 CREATE TABLE "RampDown" (

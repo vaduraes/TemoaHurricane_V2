@@ -31579,27 +31579,27 @@ INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-AP1000_New',2035,'ELC',1.0,N
 INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-AP1000_New',2040,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-AP1000_New',2045,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-AP1000_New',2050,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2023,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2025,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2030,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2035,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2040,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2045,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2050,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2023,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2025,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2030,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2035,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2040,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2045,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2050,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2023,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2025,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2030,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2035,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2040,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2045,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2050,'ELC',1.0,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2023,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2025,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2030,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2035,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2040,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2045,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','Nuclear-SMR_New',2050,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2023,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2025,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2030,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2035,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2040,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2045,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R2','NUC','Nuclear-SMR_New',2050,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2023,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2025,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2030,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2035,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2040,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2045,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','Nuclear-SMR_New',2050,'ELC',3.26177229710352722946e-01,NULL);
 INSERT INTO "Efficiency" VALUES('R1','WIND_OF','OffshoreWind_New_C6',2023,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R1','WIND_OF','OffshoreWind_New_C6',2025,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R1','WIND_OF','OffshoreWind_New_C6',2030,'ELC',1.0,NULL);
@@ -32286,8 +32286,8 @@ INSERT INTO "Efficiency" VALUES('R1','NaturalGas','NG_CC_Existing',2013,'ELC',4.
 INSERT INTO "Efficiency" VALUES('R1','NaturalGas','NG_GT_Existing',1992,'ELC',2.93598136743658777447e-01,' from EIA 923__PJ/PJ');
 INSERT INTO "Efficiency" VALUES('R1','NaturalGas','NG_GT_Existing',1995,'ELC',2.93598136743658777447e-01,' from EIA 923__PJ/PJ');
 INSERT INTO "Efficiency" VALUES('R1','NaturalGas','NG_GT_Existing',2007,'ELC',2.93598136743658777447e-01,' from EIA 923__PJ/PJ');
-INSERT INTO "Efficiency" VALUES('R1','NUC','NUC_ST_Existing',1974,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R1','NUC','NUC_ST_Existing',1976,'ELC',1.0,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','NUC_ST_Existing',1974,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R1','NUC','NUC_ST_Existing',1976,'ELC',3.26177229710352722946e-01,NULL);
 INSERT INTO "Efficiency" VALUES('R1','SOL_UT','SUN_PV_Existing',2008,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R1','SOL_UT','SUN_PV_Existing',2012,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R1','SOL_UT','SUN_PV_Existing',2013,'ELC',1.0,NULL);
@@ -32408,9 +32408,9 @@ INSERT INTO "Efficiency" VALUES('R3','NaturalGas','NG_GT_Existing',2012,'ELC',2.
 INSERT INTO "Efficiency" VALUES('R3','NaturalGas','NG_GT_Existing',2013,'ELC',2.93598136743658777447e-01,' from EIA 923__PJ/PJ');
 INSERT INTO "Efficiency" VALUES('R3','NaturalGas','NG_GT_Existing',2019,'ELC',2.93598136743658777447e-01,' from EIA 923__PJ/PJ');
 INSERT INTO "Efficiency" VALUES('R3','NaturalGas','NG_ST_Existing',2019,'ELC',3.44031410835899498223e-01,' from EIA 923__PJ/PJ');
-INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1981,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1984,'ELC',1.0,NULL);
-INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1986,'ELC',1.0,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1981,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1984,'ELC',3.26177229710352722946e-01,NULL);
+INSERT INTO "Efficiency" VALUES('R3','NUC','NUC_ST_Existing',1986,'ELC',3.26177229710352722946e-01,NULL);
 INSERT INTO "Efficiency" VALUES('R3','BIOMASS','OBG_IC_Existing',2016,'ELC',3.33376192366975487857e-01,' from EIA 923__PJ/PJ');
 INSERT INTO "Efficiency" VALUES('R3','SOL_UT','SUN_PV_Existing',2008,'ELC',1.0,NULL);
 INSERT INTO "Efficiency" VALUES('R3','SOL_UT','SUN_PV_Existing',2010,'ELC',1.0,NULL);
@@ -33638,27 +33638,26 @@ CREATE TABLE "MaxCapacity" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
-INSERT INTO "MaxCapacity" VALUES('R3',2023,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2025,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2030,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2035,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2040,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2045,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R3',2050,'WAT_PS_New',0.095,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2023,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2025,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2030,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2035,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2040,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2045,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R1',2050,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2023,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2025,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2030,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2035,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2040,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2045,'WAT_PS_New',0.0,'GW',NULL);
-INSERT INTO "MaxCapacity" VALUES('R2',2050,'WAT_PS_New',0.0,'GW',NULL);
+CREATE TABLE "MaxCapacityGroup" (
+	periods BIGINT, 
+	group_name TEXT, 
+	max_cap_g FLOAT, 
+	notes TEXT
+);
+INSERT INTO "MaxCapacityGroup" VALUES(2023,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2025,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2030,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2035,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2040,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2045,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2050,'PumpedHydro',0.095,'GW- Assume no new pumped hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2023,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2025,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2030,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2035,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2040,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2045,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
+INSERT INTO "MaxCapacityGroup" VALUES(2050,'HydroGeneration',2.058,'GW- Assume no new hydro is added above the already installed capacity');
 CREATE TABLE "MaxResource" (
 	"regions"	text,
 	"tech"	text,
@@ -33839,12 +33838,10 @@ CREATE TABLE "Output_V_Capacity" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 CREATE TABLE "PlanningReserveMargin" (
-	`regions`	text,
-	`reserve_margin`	REAL,
-	PRIMARY KEY(regions),
-	FOREIGN KEY(`regions`) REFERENCES regions
+	regions TEXT, 
+	reserve_margin FLOAT
 );
-INSERT INTO "PlanningReserveMargin" VALUES('R3',0.17);
+INSERT INTO "PlanningReserveMargin" VALUES('R1+R2+R3',0.17);
 CREATE TABLE "RampDown" (
 	`regions`	text,
 	`tech`	text,
@@ -33995,6 +33992,21 @@ CREATE TABLE `StorageInit` (
 	`storage_tech_note`	TEXT,
 	PRIMARY KEY(`storage_tech`)
 );
+CREATE TABLE "TechGroupWeight" (
+	regions TEXT, 
+	tech TEXT, 
+	group_name TEXT, 
+	weight BIGINT, 
+	tech_desc TEXT
+);
+INSERT INTO "TechGroupWeight" VALUES('R1','WAT_PS_New','PumpedHydro',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R2','WAT_PS_New','PumpedHydro',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R3','WAT_PS_New','PumpedHydro',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R3','WAT_PS_Existing','PumpedHydro',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R1','WAT_HY_New','HydroGeneration',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R2','WAT_HY_New','HydroGeneration',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R3','WAT_HY_New','HydroGeneration',1,'');
+INSERT INTO "TechGroupWeight" VALUES('R3','WAT_HY_Existing','HydroGeneration',1,'');
 CREATE TABLE "TechInputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -34069,6 +34081,8 @@ CREATE TABLE "groups" (
 	"notes"	text,
 	PRIMARY KEY("group_name")
 );
+INSERT INTO "groups" VALUES('PumpedHydro','');
+INSERT INTO "groups" VALUES('HydroGeneration','');
 CREATE TABLE "regions" (
 	"regions"	TEXT,
 	"region_note"	TEXT,
@@ -34127,6 +34141,10 @@ CREATE TABLE `tech_groups` (
 	`notes`	text,
 	PRIMARY KEY(tech)
 );
+INSERT INTO "tech_groups" VALUES('WAT_PS_New','');
+INSERT INTO "tech_groups" VALUES('WAT_PS_Existing','');
+INSERT INTO "tech_groups" VALUES('WAT_HY_New','');
+INSERT INTO "tech_groups" VALUES('WAT_HY_Existing','');
 CREATE TABLE tech_new_cluster ( regions TEXT, tech TEXT, cap_size REAL, PRIMARY KEY (regions, tech));
 CREATE TABLE "tech_ramping" (
 	"tech"	text,
