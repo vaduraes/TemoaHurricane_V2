@@ -33838,8 +33838,10 @@ CREATE TABLE "Output_V_Capacity" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 CREATE TABLE "PlanningReserveMargin" (
-	regions TEXT, 
-	reserve_margin FLOAT
+	`regions`	text,
+	`reserve_margin`	REAL,
+	PRIMARY KEY(regions)
+
 );
 INSERT INTO "PlanningReserveMargin" VALUES('R1+R2+R3',0.17);
 CREATE TABLE "RampDown" (

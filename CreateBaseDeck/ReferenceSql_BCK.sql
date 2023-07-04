@@ -464,7 +464,7 @@ CREATE TABLE "Output_V_Capacity" (
 CREATE TABLE "PlanningReserveMargin" (
 	`regions`	text,
 	`reserve_margin`	REAL,
-	PRIMARY KEY(regions),
+	PRIMARY KEY(regions)
 
 );
 
