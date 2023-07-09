@@ -281,7 +281,10 @@ def temoa_create_model(name="Temoa"):
     M.V_CapacityAvailableByPeriodAndTech = Var(
         M.CapacityAvailableVar_rpt, domain=NonNegativeReals
     )
-
+    #Victor Faria 7/7/2023
+    M.tech_CapReduction = Set() 
+    M.CapReduction = Param(M.RegionalIndices, M.time_optimize, M.tech_all, M.vintage_all, default = 1.0)
+    
     # ---------------------------------------------------------------
     # Declare the Objective Function.
     # ---------------------------------------------------------------

@@ -81,16 +81,16 @@ possibility.
         return value(M.CapacityFactorProcess[r, s, d, t, v]) \
             * value(M.CapacityToActivity[r, t]) * value(M.SegFrac[s, d]) \
             * value(M.ProcessLifeFrac[r, p, t, v]) \
-            * M.V_Capacity[r, t, v] == useful_activity + sum( \
+            * M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) == useful_activity + sum( \
             M.V_Curtailment[r, p, s, d, S_i, t, v, S_o] \
             for S_i in M.processInputs[r, p, t, v] \
-            for S_o in M.ProcessOutputsByInput[r, p, t, v, S_i])
+            for S_o in M.ProcessOutputsByInput[r, p, t, v, S_i])#Victor Faria 07/07/23
     else:
         return value(M.CapacityFactorProcess[r, s, d, t, v]) \
         * value(M.CapacityToActivity[r, t]) \
         * value(M.SegFrac[s, d]) \
         * value(M.ProcessLifeFrac[r, p, t, v]) \
-        * M.V_Capacity[r, t, v] >= useful_activity
+        * M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) >= useful_activity #Victor Faria 07/07/23
 
 
 def CapacityAnnual_Constraint(M, r, p, t, v):
@@ -130,7 +130,7 @@ capacity.
     return CF \
     * value(M.CapacityToActivity[r, t]) \
     * value(M.ProcessLifeFrac[r, p, t, v]) \
-    * M.V_Capacity[r, t, v] >= activity_rptv
+    * M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) >= activity_rptv #Victor Faria 07/07/23
 
 
 def ActivityByTech_Constraint(M, t):
@@ -200,9 +200,9 @@ throughout the period.
    \forall p \in \text{P}^o, r \in R, t \in T
 """
     cap_avail = sum(
-        value(M.ProcessLifeFrac[r, p, t, S_v]) * M.V_Capacity[r, t, S_v]
+        value(M.ProcessLifeFrac[r, p, t, S_v]) * M.V_Capacity[r, t, S_v]*value(M.CapReduction[r, p, t, S_v])
         for S_v in M.processVintages[r, p, t]
-    )
+    )#VF
 
     expr = M.V_CapacityAvailableByPeriodAndTech[r, p, t] == cap_avail
     return expr
@@ -986,12 +986,12 @@ scale the storage duration to account for the number of days in each season.
 """
 
     energy_capacity = (
-        M.V_Capacity[r, t, v]
+        M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) 
         * M.CapacityToActivity[r, t]
         * (M.StorageDuration[r, t] / 8760)
         * sum(M.SegFrac[s,S_d] for S_d in M.time_of_day) * 365
-        * value(M.ProcessLifeFrac[r, p, t, v])
-    )
+        * value(M.ProcessLifeFrac[r, p, t, v]) 
+    )#VF
     expr = M.V_StorageLevel[r, p, s, d, t, v] <= energy_capacity
 
     return expr
@@ -1023,11 +1023,11 @@ limited by the power capacity (typically GW) of the storage unit.
 
     # Maximum energy charge in each time slice
     max_charge = (
-        M.V_Capacity[r, t, v]
+        M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])
         * M.CapacityToActivity[r, t]
         * M.SegFrac[s, d]
-        * value(M.ProcessLifeFrac[r, p, t, v])
-    )
+        * value(M.ProcessLifeFrac[r, p, t, v]) 
+    )#VF
 
     # Energy charge cannot exceed the power capacity of the storage unit
     expr = slice_charge <= max_charge
@@ -1060,11 +1060,11 @@ is limited by the power capacity (typically GW) of the storage unit.
 
     # Maximum energy discharge in each time slice
     max_discharge = (
-        M.V_Capacity[r, t, v]
+        M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])
         * M.CapacityToActivity[r, t]
         * M.SegFrac[s, d]
-        * value(M.ProcessLifeFrac[r, p, t, v])
-    )
+        * value(M.ProcessLifeFrac[r, p, t, v]) 
+    )#VF
 
     # Energy discharge cannot exceed the capacity of the storage unit
     expr = slice_discharge <= max_discharge
@@ -1105,11 +1105,11 @@ the capacity (typically GW) of the storage unit.
 
     throughput = charge + discharge
     max_throughput = (
-        M.V_Capacity[r, t, v]
+        M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])
         * M.CapacityToActivity[r, t]
         * M.SegFrac[s, d]
-        * value(M.ProcessLifeFrac[r, p, t, v])
-    )
+        * value(M.ProcessLifeFrac[r, p, t, v]) 
+    )#VF
     expr = throughput <= max_throughput
     return expr
 
@@ -1142,12 +1142,12 @@ capacity could lead to more expensive solutions.
 
     s = M.time_season.first()
     energy_capacity = (
-        M.V_Capacity[r, t, v]
+        M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])
         * M.CapacityToActivity[r, t]
         * (M.StorageDuration[r, t] / 8760)
         * sum(M.SegFrac[s,S_d] for S_d in M.time_of_day) * 365
-        * value(M.ProcessLifeFrac[r, v, t, v])
-    )
+        * value(M.ProcessLifeFrac[r, v, t, v]) 
+    )#VF
 
     expr = M.V_StorageInit[r, t, v] ==  energy_capacity * M.StorageInitFrac[r, t, v]
 
@@ -1219,7 +1219,7 @@ In the :code:`RampUpDay` and :code:`RampUpSeason` constraints, we assume
             activity_sd / value(M.SegFrac[s, d])
             - activity_sd_prev / value(M.SegFrac[s, d_prev])
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = M.V_Capacity[r, t, v] * value(M.RampUp[r, t])
+        expr_right = M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])* value(M.CapReduction[r, p, t, v]) * value(M.RampUp[r, t]) #VF
         expr = expr_left <= expr_right
     else:
         return Constraint.Skip
@@ -1270,7 +1270,7 @@ constraint to limit ramp down rates between any two adjacent time slices.
             activity_sd / value(M.SegFrac[s, d])
             - activity_sd_prev / value(M.SegFrac[s, d_prev])
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = -(M.V_Capacity[r, t, v] * value(M.RampDown[r, t]))
+        expr_right = -(M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])*value(M.CapReduction[r, p, t, v]) * value(M.RampDown[r, t])) #VF
         expr = expr_left >= expr_right
     else:
         return Constraint.Skip
@@ -1324,7 +1324,7 @@ respectively.
             activity_sd_first / M.SegFrac[s, d_first]
             - activity_s_prev_d_last / M.SegFrac[s_prev, d_last]
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = M.V_Capacity[r, t, v] * value(M.RampUp[r, t])
+        expr_right = M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) * value(M.RampUp[r, t]) #VF
         expr = expr_left <= expr_right
     else:
         return Constraint.Skip
@@ -1379,7 +1379,7 @@ between any two adjacent seasons.
             activity_sd_first / value(M.SegFrac[s, d_first])
             - activity_s_prev_d_last / value(M.SegFrac[s_prev, d_last])
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = -(M.V_Capacity[r, t, v] * value(M.RampDown[r, t]))
+        expr_right = -(M.V_Capacity[r, t, v] * value(M.RampDown[r, t])) *value(M.CapReduction[r, p, t, v]) #VF
         expr = expr_left >= expr_right
     else:
         return Constraint.Skip
@@ -1486,7 +1486,7 @@ we write this equation for all the time-slices defined in the database in each r
         cap_avail = cap_avail+sum(
             value(M.CapacityCredit[r_tmp, p, t, v])
             * M.ProcessLifeFrac[r_tmp, p, t, v]
-            * M.V_Capacity[r_tmp, t, v]
+            * M.V_Capacity[r_tmp, t, v]*value(M.CapReduction[r, p, t, v])
             * value(M.CapacityToActivity[r_tmp, t])
             * value(M.SegFrac[s, d])
             for t in M.tech_reserve
