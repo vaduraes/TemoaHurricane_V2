@@ -1,49 +1,37 @@
 #-----------------------------------------------------
-# This is a sample configuration file for Temoa
-# It allows you to specify (and document) all run-time model options 
-# Legal chars in path: a-z A-Z 0-9 - _ \ / . : 
+# This is an automatically generated configuration file for Temoa using temoatools github.com/EnergyModels/temoatools
+# It allows you to specify (and document) all run-time model options
+# Legal chars in path: a-z A-Z 0-9 - _  / . :
 # Comment out non-mandatory options to omit them
-#-----------------------------------------------------
+#----------------------------------------------------- 
 
-# Input File (Mandatory) 
+# Input File (Mandatory)
 # Input can be a .sqlite or .dat file
 # Both relative path and absolute path are accepted
---input=data_files/NC_EnergySystem2023.sqlite
+--input=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\Scenarios\ScenarioStructure.dat
 
 # Output File (Mandatory)
 # The output file must be a existing .sqlite file
---output=data_files/NC_EnergySystem2023.sqlite
+--output=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\NC_EnergySystem2023.sqlite
 
-# Scenario Name (Mandatory) 
+# Scenario Name (Mandatory)
 # This scenario name is used to store results within the output .sqlite file
---scenario=Coservative_TechDev
+--scenario=StochasticModel
 
-# Path to folder containing input dataset (Mandatory)
+# Path to the 'db_io' folder (Mandatory)
 # This is the location where database files reside
---path_to_data=data_files
+--path_to_data=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\temoa_stochastic\data_files
 
-# Solve Myopically (Optional)
-# Allows user to solve one model time period at a time, sequentially
-# Default operation is "perfect foresight"
-#--myopic
-#--myopic_periods=2
-#--keep_myopic_databases
-
-# Report Duals (Optional) 
-# Store Duals results in the output .sqlite file
-#--saveDUALS
-
-# Spreadsheet Output (Optional) 
+# Spreadsheet Output (Optional)
 # Direct model output to a spreadsheet
 # Scenario name specified above is used to name the spreadsheet
---saveEXCEL
+#--saveEXCEL
 
 # Save the log file output (Optional)
 # This is the same output provided to the shell
---saveTEXTFILE
+#--saveTEXTFILE
 
 # Solver-related arguments (Optional)
-#--neos                            # Optional, specify if you want to use NEOS server to solve
 --solver=gurobi                    # Optional, indicate the solver
 #--keep_pyomo_lp_file             # Optional, generate Pyomo-compatible LP file
 
@@ -52,5 +40,6 @@
 #--mga {
 #	slack=0.1                     # Objective function slack value in MGA runs
 #	iteration=4                   # Number of MGA iterations
-#	weight=integer                # MGA objective function weighting method, currently "integer" or "normalized"
+#	weight=integer                # MGA objective function weighting method, currently 'integer' or 'normalized'
 #}
+
