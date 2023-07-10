@@ -34,6 +34,7 @@ import os, sys
 from mpisppy.utils.pysp_model import PySPModel
 from mpisppy.opt.ph import PH
 import mpisppy.utils.sputils as sputils
+from mpisppy.opt.ef import ExtensiveForm
 
 
 def return_CP_and_path(p_data):
@@ -122,32 +123,28 @@ from os.path import dirname, abspath
 
 def solve_ef(model, p_dot_dat, data_dir, temoa_options):
 
-
-    
     Instance = PySPModel(model=model, scenario_tree=p_dot_dat, data_dir=data_dir)   
-    
-    ef = sputils.create_EF(Instance.all_scenario_names, Instance.scenario_creator)
-    
-    solver = pyo.SolverFactory(temoa_options.solver)
-    ef_result=solver.solve(ef, tee=True, symbolic_solver_labels=True)
-        
+    options = {"solver": temoa_options.solver,
+           'verbose': True,
+           'display_progress': True,
+           'display_timing': True}
+
+    ef = ExtensiveForm(options, Instance.all_scenario_names, Instance.scenario_creator,all_nodenames=Instance.all_nodenames)
+    ef_result=ef.solve_extensive_form(tee=True)
+    # solver_options={'Threads':10}
+    # ef_result=ef.solve_extensive_form(tee=True,solver_options=solver_options)
         
     # Write to database
     if hasattr(temoa_options, 'output'):
         sys.path.append(data_dir)
     
         ef_result.solution.Status = 'feasible' # Assume it is feasible
-        
         s2cd_dict, s2fp_dict = return_CP_and_path(os.path.dirname(p_dot_dat))
-        stochastic_run = temoa_options.scenario # Name of stochastic run
-        
 
-        ScenarioName=list(ef.component_map())[3:-2]
+        stochastic_run = temoa_options.scenario # Name of stochastic run  
 
-        for sname in ScenarioName:
-            s=ef.component(sname)
-
-            
+        for sname, s in ef.scenarios():
+             
             temoa_options.scenario = '.'.join( [stochastic_run, s.name] )
             
             temoa_options.dot_dat = list()
@@ -162,7 +159,37 @@ def solve_ef(model, p_dot_dat, data_dir, temoa_options):
 
             formatted_results = pformat_results( s, ef_result, temoa_options )
 
-    return ef.EF_Obj()
+    return ef.get_objective_value()
+
+
+def solve_ph(model, p_dot_dat, data_dir, temoa_options):
+
+    Instance = PySPModel(model=model, scenario_tree=p_dot_dat, data_dir=data_dir)   
+
+    phoptions = {'defaultPHrho': 1.0,
+             'solver_name':temoa_options.solver,
+             'PHIterLimit': 50,
+             'convthresh': 0.01,
+             'verbose': False,
+             'display_progress': True,
+             'display_timing': True,
+             'iter0_solver_options': None,
+             'iterk_solver_options': None
+             }
+
+    ph = PH( options = phoptions,
+            all_scenario_names = Instance.all_scenario_names,
+            scenario_creator = Instance.scenario_creator,
+            all_nodenames=Instance.all_nodenames,
+            scenario_denouement = Instance.scenario_denouement,
+            )
+
+    ph_result=ph.ph_main()
+
+    #Need work to write outputs
+
+    return 0
+
 
 def StochasticPointObjective_rule ( M, p ):
     expr = ( M.StochasticPointCost[ p ] == PeriodCost_rule( M, p ) )
@@ -171,14 +198,14 @@ def StochasticPointObjective_rule ( M, p ):
 def Objective_rule ( M ):
     return sum( M.StochasticPointCost[ pp ] for pp in M.time_optimize )
 
-M = model = temoa_create_model( 'TEMOA Stochastic' )
+model = temoa_create_model( 'TEMOA Stochastic' )
 
-M.StochasticPointCost = Var( M.time_optimize, within=NonNegativeReals )
-M.StochasticPointCostConstraint = Constraint( M.time_optimize, rule=StochasticPointObjective_rule )
+model.StochasticPointCost = Var( model.time_optimize, within=NonNegativeReals )
+model.StochasticPointCostConstraint = Constraint( model.time_optimize, rule=StochasticPointObjective_rule )
 
-del M.TotalCost
-M.TotalCost = Objective( rule=Objective_rule, sense=minimize )
-model=M
+del model.TotalCost
+model.TotalCost = Objective( rule=Objective_rule, sense=minimize )
+
 
 if __name__ == "__main__":
     
@@ -188,5 +215,7 @@ if __name__ == "__main__":
     
 
     print(p_dot_dat, data_dir)
+    
     print(solve_ef(model, p_dot_dat, data_dir, temoa_options))
+    #solve_ph(model, p_dot_dat, data_dir, temoa_options) #For now this does not save the results (future work) PH not faster than EF and not saving memory
     

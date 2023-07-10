@@ -451,6 +451,7 @@ def get_solvers():
 	# pyomo>6.0
     pyomo_solvers_list = pyo.SolverFactory.__dict__['_cls'].keys()
     available_solvers = []
+
     
     for s in pyomo_solvers_list:
         if any(ele == s for ele in ["cplex",'gurobi',"cbc","glpk","ipopt"]):
