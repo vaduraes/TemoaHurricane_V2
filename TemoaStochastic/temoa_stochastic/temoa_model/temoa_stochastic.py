@@ -122,17 +122,23 @@ import os, re
 from os.path import dirname, abspath
 
 def solve_ef(model, p_dot_dat, data_dir, temoa_options):
-
+    sys.path.insert(0, r"C:\Program Files\IBM\ILOG\CPLEX_Studio2211\cplex\bin\x64_win64\cplex.exe") 
     Instance = PySPModel(model=model, scenario_tree=p_dot_dat, data_dir=data_dir)   
+    
+    temoa_options.solver="gurobi"
     options = {"solver": temoa_options.solver,
            'verbose': True,
            'display_progress': True,
            'display_timing': True}
 
-    ef = ExtensiveForm(options, Instance.all_scenario_names, Instance.scenario_creator,all_nodenames=Instance.all_nodenames)
-    ef_result=ef.solve_extensive_form(tee=True)
-    # solver_options={'Threads':10}
-    # ef_result=ef.solve_extensive_form(tee=True,solver_options=solver_options)
+    #ef_result=ef.solve_extensive_form(tee=True)
+    #solver_options={'Threads':100,"Method":1}
+ 
+    # solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1} #2^6 case works
+    # solver_options={'Threads':20, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2}
+    solver_options={'Threads':10, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2}
+    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2}
+    ef_result=ef.solve_extensive_form(tee=True,solver_options=solver_options)
         
     # Write to database
     if hasattr(temoa_options, 'output'):
