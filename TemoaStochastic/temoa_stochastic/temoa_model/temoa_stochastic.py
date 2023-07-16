@@ -132,10 +132,11 @@ def solve_ef(model, p_dot_dat, data_dir, temoa_options):
            'display_timing': True}
     ef = ExtensiveForm(options, Instance.all_scenario_names, Instance.scenario_creator,all_nodenames=Instance.all_nodenames)
 
-    solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1} #2^6 case works
-    #solver_options={'Threads':20, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2}
-    #solver_options={'Threads':10, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2}
-    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2} #3^6 case works
+    solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":0, "BarConvTol":5e-8} #2^6 case works
+    #solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":0, "BarConvTol":5e-8,"Presolve": 2}
+    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":0, "BarConvTol":5e-8, "BarOrder":0} #3^6 case works
+    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":0, "BarConvTol":5e-8, "BarOrder":0,"Presolve": 2} #3^6 case works
+    
     #solver_options={'Threads':22, "lpmethod":4,"solutiontype":2,"barrier_convergetol":2.5e-7, "preprocessing_dual": -1,"barrier_colnonzeros":90+2*len(Instance.all_scenario_names),"barrier_startalg":3} #Cplex
     ef_result=ef.solve_extensive_form(tee=True,solver_options=solver_options)
         
