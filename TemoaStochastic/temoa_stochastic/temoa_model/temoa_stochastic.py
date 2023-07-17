@@ -133,10 +133,13 @@ def solve_ef(model, p_dot_dat, data_dir, temoa_options):
     ef = ExtensiveForm(options, Instance.all_scenario_names, Instance.scenario_creator,all_nodenames=Instance.all_nodenames)
 
 #ScaleFlag most used to scale the objective function 
-    solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":2, "BarConvTol":5e-8} #2^6 case works
-    #solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":2, "BarConvTol":5e-8,"Presolve": 2}
-    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":2, "BarConvTol":5e-8, "BarOrder":0} #3^6 case works
-    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "ScaleFlag":2, "BarConvTol":5e-8, "BarOrder":0,"Presolve": 2} #3^6 case works
+
+    #Option that work for the NC 2^6 case: Takes 24h to solve about 2h to load the data and 19-22h to solve
+    #uses about 140GB of memory however, during ordering has a peak of 400GB that last 10min
+    solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "BarConvTol":5e-8,"ScaleFlag":2} #gurobi
+
+    
+    #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "BarConvTol":5e-8,"ScaleFlag":2, "BarOrder":0} #3^6 case works
     
     #solver_options={'Threads':22, "lpmethod":4,"solutiontype":2,"barrier_convergetol":2.5e-7, "preprocessing_dual": -1,"barrier_colnonzeros":90+2*len(Instance.all_scenario_names),"barrier_startalg":3} #Cplex
     ef_result=ef.solve_extensive_form(tee=True,solver_options=solver_options)
