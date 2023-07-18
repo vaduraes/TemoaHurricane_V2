@@ -1,9 +1,9 @@
-/TemoaStochastic/WriteStochasticFiles/Import2TemoaFiles/*
-!/TemoaStochastic/WriteStochasticFiles/Import2TemoaFiles/.gitignore
-/InterpretResults/DeterministicFiles/*
+/TemoaStochastic/WriteStochasticFiles/Import2TemoaFiles/
 !/InterpretResults/DeterministicFiles/.gitignore
 /InterpretResults/StochasticFiles/*
 !/InterpretResults/StochasticFiles/.gitignore
 /TemoaDeterministic/data_files/*
 !/TemoaDeterministic/data_files/.gitignore
 !/TemoaDeterministic/data_files/debug_logs
+/TemoaDeterministic/temoa_model/__pycache__/
+/TemoaStochastic/temoa_model/__pycache__/
