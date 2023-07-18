@@ -8,11 +8,11 @@
 # Input File (Mandatory)
 # Input can be a .sqlite or .dat file
 # Both relative path and absolute path are accepted
---input=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\Scenarios\ScenarioStructure.dat
+--input=C:\Users\Victor\Desktop\TEMOA\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\Scenarios\ScenarioStructure.dat
 
 # Output File (Mandatory)
 # The output file must be a existing .sqlite file
---output=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\NC_EnergySystem2023.sqlite
+--output=C:\Users\Victor\Desktop\TEMOA\TemoaHurricane_V2\TemoaStochastic\WriteStochasticFiles\Import2TemoaFiles\NC_EnergySystem2023.sqlite
 
 # Scenario Name (Mandatory)
 # This scenario name is used to store results within the output .sqlite file
@@ -20,7 +20,7 @@
 
 # Path to the 'db_io' folder (Mandatory)
 # This is the location where database files reside
---path_to_data=C:\Users\Remote\Desktop\Projects\TemoaHurricane_OEA\TEMOA_GIT\TemoaHurricane_V2\TemoaStochastic\temoa_stochastic\data_files
+--path_to_data=C:\Users\Victor\Desktop\TEMOA\TemoaHurricane_V2\TemoaStochastic\temoa_stochastic\data_files
 
 # Spreadsheet Output (Optional)
 # Direct model output to a spreadsheet
