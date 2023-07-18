@@ -1,5 +1,6 @@
 /TemoaStochastic/WriteStochasticFiles/Import2TemoaFiles/*
 !/TemoaStochastic/WriteStochasticFiles/Import2TemoaFiles/.gitignore
-/InterpretResults/DeterministicFiles/
+/InterpretResults/DeterministicFiles/*
+!/InterpretResults/DeterministicFiles/.gitignore
 /InterpretResults/StochasticFiles/
-/InterpretResults/CreateBaseDeck_NC/
+!/InterpretResults/StochasticFiles/.gitignore
