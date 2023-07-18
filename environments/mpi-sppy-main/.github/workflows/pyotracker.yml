@@ -1,0 +1,55 @@
+# Pyomo tracker --- dynamically imports pyomo main
+
+name: pyomo tracker
+
+on:
+  schedule:
+    # min hr dayofmonth month dayofweek 
+    - cron: "14 3 * * *"
+
+defaults:
+    run:
+        shell: bash -l {0}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pyomo-version: [6.4.2, main]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: test_env
+          python-version: 3.9
+          auto-activate-base: false
+      - name: Install dependencies
+        run: |
+          conda install mpi4py pandas setuptools git
+          pip install sphinx sphinx_rtd_theme cplex
+          pip install xpress
+          pip install numpy
+
+      - name: set up pyomo
+        run: |
+          pip install git+https://github.com/Pyomo/pyomo.git@${{ matrix.pyomo-version }}
+
+      - name: setup the program
+        run: |
+          python setup.py develop
+
+      - name: Test EF/PH
+        run: |
+          python mpisppy/tests/test_ef_ph.py
+
+      - name: Test afew
+        run: |
+          cd examples
+          python afew.py xpress_persistent 
+
+      - name: Test docs
+        run: |
+          cd ./doc/src/
+          make doctest

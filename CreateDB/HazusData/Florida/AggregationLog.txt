@@ -1,0 +1,185 @@
+15.07.2023 20:51:55:    Created Study Region successfully.
+15.07.2023 20:51:55:    File activation failure. The physical file name "E:\HazusData\Inventory\FL\FL_log.ldf" may be incorrect.
+15.07.2023 20:51:55:    New log file 'C:\HazusData\Inventory\FL\FL_log.ldf' was created.
+15.07.2023 20:51:55:    Converting database 'FL' from version 782 to the current version 904.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 782 to version 801.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 801 to version 802.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 802 to version 803.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 803 to version 804.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 804 to version 805.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 805 to version 806.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 806 to version 807.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 807 to version 808.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 808 to version 809.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 809 to version 810.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 810 to version 811.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 811 to version 812.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 812 to version 813.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 813 to version 814.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 814 to version 815.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 815 to version 816.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 816 to version 817.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 817 to version 818.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 818 to version 819.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 819 to version 820.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 820 to version 821.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 821 to version 822.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 822 to version 823.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 823 to version 824.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 824 to version 825.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 825 to version 826.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 826 to version 827.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 827 to version 828.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 828 to version 829.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 829 to version 830.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 830 to version 831.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 831 to version 832.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 832 to version 833.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 833 to version 834.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 834 to version 835.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 835 to version 836.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 836 to version 837.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 837 to version 838.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 838 to version 839.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 839 to version 840.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 840 to version 841.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 841 to version 842.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 842 to version 843.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 843 to version 844.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 844 to version 845.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 845 to version 846.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 846 to version 847.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 847 to version 848.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 848 to version 849.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 849 to version 850.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 850 to version 851.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 851 to version 852.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 852 to version 853.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 853 to version 854.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 854 to version 855.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 855 to version 856.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 856 to version 857.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 857 to version 858.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 858 to version 859.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 859 to version 860.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 860 to version 861.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 861 to version 862.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 862 to version 863.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 863 to version 864.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 864 to version 865.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 865 to version 866.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 866 to version 867.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 867 to version 868.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 868 to version 869.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 869 to version 875.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 875 to version 876.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 876 to version 877.
+15.07.2023 20:51:55:    Database 'FL' running the upgrade step from version 877 to version 878.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 878 to version 879.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 879 to version 880.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 880 to version 881.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 881 to version 882.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 882 to version 883.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 883 to version 884.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 884 to version 885.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 885 to version 886.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 886 to version 887.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 887 to version 888.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 888 to version 889.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 889 to version 890.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 890 to version 891.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 891 to version 892.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 892 to version 893.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 893 to version 894.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 894 to version 895.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 895 to version 896.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 896 to version 897.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 897 to version 898.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 898 to version 899.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 899 to version 900.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 900 to version 901.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 901 to version 902.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 902 to version 903.
+15.07.2023 20:51:56:    Database 'FL' running the upgrade step from version 903 to version 904.
+15.07.2023 20:51:56:    SELECT Table_Name,TABLE_SCHEMA  FROM [FL].INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='DBO'
+15.07.2023 20:51:56:    1|1|17|Aggregate Mapping Scheme
+15.07.2023 20:51:56:    2|1|2|Aggregate General Building Schemes
+15.07.2023 20:51:56:    2|2|2|Aggregate General Building Scheme
+15.07.2023 20:51:56:    1|2|17|Aggregate Boundaries
+15.07.2023 20:51:56:    2|1|4|Copy State
+15.07.2023 20:51:56:    2|2|4|Copy Counties
+15.07.2023 20:51:57:    2|3|4|Copy Tracts
+15.07.2023 20:51:57:    2|4|4|Copy Census Blocks
+15.07.2023 20:52:43:    1|3|17|Aggregate Bridges
+15.07.2023 20:52:43:    2|1|3|Aggregate Highway Bridges
+15.07.2023 20:52:45:    2|2|3|Aggregate Railway Bridges
+15.07.2023 20:52:46:    2|3|3|Aggregate Light Rail Bridges
+15.07.2023 20:52:46:    1|4|17|Aggregate Essential Facilities
+15.07.2023 20:52:46:    2|1|5|Aggregate Medical Facilities
+15.07.2023 20:52:47:    2|2|5|Aggregate Emergency Care Facilities
+15.07.2023 20:52:47:    2|3|5|Aggregate Police Stations
+15.07.2023 20:52:48:    2|4|5|Aggregate Fire Stations
+15.07.2023 20:52:49:    2|5|5|Aggregate Schools
+15.07.2023 20:52:50:    1|5|17|Aggregate High Potential Loss Facilities
+15.07.2023 20:52:50:    2|1|5|Aggregate Dams
+15.07.2023 20:52:50:    2|2|5|Aggregate Levees
+15.07.2023 20:52:50:    2|3|5|Aggregate Nuclear Facilities
+15.07.2023 20:52:51:    2|4|5|Aggregate Military Facilities
+15.07.2023 20:52:51:    2|5|5|Aggregate Hazardous Material Facilities
+15.07.2023 20:52:52:    1|6|17|Aggregate Pipelines
+15.07.2023 20:52:52:    2|1|4|Aggregate Potable Water Pipelines
+15.07.2023 20:52:52:    2|2|4|Aggregate Waste Water Pipelines
+15.07.2023 20:52:52:    2|3|4|Aggregate Oil Pipelines
+15.07.2023 20:52:52:    2|4|4|Aggregate Natural Gas Pipelines
+15.07.2023 20:52:52:    1|7|17|Aggregate Transportation Facilities
+15.07.2023 20:52:52:    2|1|7|Aggregate Railway Facilities
+15.07.2023 20:52:53:    2|2|7|Aggregate Light Rail Facilities
+15.07.2023 20:52:53:    2|3|7|Aggregate Bus Facilities
+15.07.2023 20:52:54:    2|4|7|Aggregate Port Facilites
+15.07.2023 20:52:54:    2|5|7|Aggregate Ferry Facilities
+15.07.2023 20:52:55:    2|6|7|Aggregate Airport Facilities
+15.07.2023 20:52:56:    2|7|7|Aggregate Runways
+15.07.2023 20:52:56:    1|8|17|Aggregate Transportation Segments
+15.07.2023 20:52:56:    2|1|3|Aggregate Highways
+15.07.2023 20:52:56:    2|2|3|Aggregate Railroads
+15.07.2023 20:52:56:    2|3|3|Aggregate Light Rails
+15.07.2023 20:52:56:    1|9|17|Aggregate Tunnels
+15.07.2023 20:52:56:    2|1|3|Aggregate Highway Tunnels
+15.07.2023 20:52:57:    2|2|3|Aggregate Railway Tunnels
+15.07.2023 20:52:58:    2|3|3|Aggregate Light Rail Tunnels
+15.07.2023 20:52:58:    1|10|17|Aggregate Utility Facilities
+15.07.2023 20:52:58:    2|1|6|Aggregate Potable Water Facilities
+15.07.2023 20:52:59:    2|2|6|Aggregate Waste Water Facilities
+15.07.2023 20:52:59:    2|3|6|Aggregate Natural Gas Facilities
+15.07.2023 20:53:00:    2|4|6|Aggregate Oil Facilities
+15.07.2023 20:53:00:    2|5|6|Aggregate Electric Power Factilites
+15.07.2023 20:53:01:    2|6|6|Aggregate Communication Facilities
+15.07.2023 20:53:02:    1|11|17|Aggregate General Building Stock
+15.07.2023 20:53:02:    2|1|6|Aggregate Means County Location Factor
+15.07.2023 20:53:02:    2|2|6|Aggregate Building Count Occupancy by Tract
+15.07.2023 20:53:02:    2|3|6|Aggregate Demographics by Tract
+15.07.2023 20:53:02:    2|4|6|Aggregate Exposure Occupancy by Tract
+15.07.2023 20:53:02:    2|5|6|Aggregate Square Footage Occupancy by Tract
+15.07.2023 20:53:02:    2|6|6|Aggregate Exposure Content by Tract
+15.07.2023 20:53:02:    1|12|17|Aggregate User Defined Facilities
+15.07.2023 20:53:02:    2|1|2|Aggregate hzUserDefinedFlty
+15.07.2023 20:53:02:    2|2|2|Aggregate huUserDefinedFlty
+15.07.2023 20:53:02:    1|13|17|Aggregate Hurricane Data
+15.07.2023 20:53:02:    2|1|3|Aggregate Hazard Map Windspeed
+15.07.2023 20:53:02:    2|2|3|Aggregate Terrain
+15.07.2023 20:53:02:    2|3|3|Aggregate Tree Parameters
+15.07.2023 20:53:02:    1|14|17|Create study region boundary
+15.07.2023 20:53:02:    2|1|1|Gather input boundaries
+15.07.2023 20:53:02:    1|15|17|Union Study Region Boundaries
+15.07.2023 20:53:02:    2|1|2|Union Study Region Boundaries
+15.07.2023 20:53:16:    2|2|2|Buffer Study Region Boundary
+15.07.2023 20:53:18:     
+15.07.2023 20:53:27:    1|16|17|Hurricane Post Processing
+15.07.2023 20:53:27:    2|0|1|Compute Block Specific Values
+15.07.2023 20:53:28:    1|17|17|Hurricane Post Processing By Tract
+15.07.2023 20:53:28:    2|1|5|Compute Block Specific Values
+15.07.2023 20:53:28:    2|2|5|Process Building Count
+15.07.2023 20:53:30:    2|3|5|Process Building Square Footage
+15.07.2023 20:53:30:    2|4|5|Process Building Exposure
+15.07.2023 20:53:30:    2|5|5|Process Building Exposure Content
+15.07.2023 20:53:31:    Run time: 0 hours 1 minutes 37.00 seconds
