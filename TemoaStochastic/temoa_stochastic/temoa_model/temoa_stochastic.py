@@ -45,8 +45,9 @@ def return_CP_and_path(p_data):
     # scenario.
     from collections import deque, defaultdict
     # from pyomo.pysp.util.scenariomodels import scenario_tree_model
-    from pyomo.pysp.scenariotree.tree_structure_model import \
+    from pysp.scenariotree.tree_structure_model import \
     CreateAbstractScenarioTreeModel
+
 
     pwd = os.getcwd()
     os.chdir(p_data)
@@ -138,7 +139,7 @@ def solve_ef(model, p_dot_dat, data_dir, temoa_options):
     #uses about 140GB of memory however, during ordering has a peak of 400GB that last 10min
     solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "BarConvTol":5e-8,"ScaleFlag":2} #gurobi
 
-    
+
     #solver_options={'Threads':5, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "BarConvTol":5e-8,"ScaleFlag":2, "BarOrder":0} #3^6 case works
     
     #solver_options={'Threads':22, "lpmethod":4,"solutiontype":2,"barrier_convergetol":2.5e-7, "preprocessing_dual": -1,"barrier_colnonzeros":90+2*len(Instance.all_scenario_names),"barrier_startalg":3} #Cplex
