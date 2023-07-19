@@ -29,7 +29,7 @@ from pyomo.core import (Block,
 from pyomo.core.base.block import _BlockData
 from pyomo.common.dependencies import yaml, yaml_available, yaml_load_args
 from pyomo.common.gc_manager import PauseGC
-from pyomo.common.plugin import ExtensionPoint
+from pyomo.common.plugin_base import ExtensionPoint
 from pyomo.common.fileutils import import_file
 from .tree_structure_model import \
     (CreateAbstractScenarioTreeModel,
