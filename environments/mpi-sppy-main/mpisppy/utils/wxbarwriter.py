@@ -28,17 +28,12 @@ import pyomo.environ as pyo
 import mpisppy.utils.wxbarutils
 import mpisppy.extensions.extension
 
-import mpisppy.MPI as MPI 
-                         
-n_proc = MPI.COMM_WORLD.Get_size()
-rank = MPI.COMM_WORLD.Get_rank()
-
 class WXBarWriter(mpisppy.extensions.extension.Extension):
     """ Extension class for writing the W values
     """
-    def __init__(self, ph):
+    def __init__(self, ph, rank, n_proc):
         # Check a bunch of files
-        w_fname, w_grad_fname, x_fname, sep_files = None, None, None, False
+        w_fname, x_fname, sep_files = None, None, False
 
         if ('W_fname' in ph.options): # W_fname is a path if separate_W_files=True
             w_fname = ph.options['W_fname']
@@ -66,7 +61,6 @@ class WXBarWriter(mpisppy.extensions.extension.Extension):
         self.PHB = ph
         self.cylinder_rank = rank
         self.w_fname = w_fname
-        self.w_grad_fname = w_grad_fname
         self.x_fname = x_fname
         self.sep_files = sep_files # Write separate files for each 
                                    # scenario's dual weights
@@ -77,26 +71,18 @@ class WXBarWriter(mpisppy.extensions.extension.Extension):
     def post_iter0(self):
         pass
         
-    def miditer(self):
+    def miditer(self, PHIter, conv):
         pass
 
-    def enditer(self):
-       """ if (self.w_fname):
-            fname = f'fname{self.PHB._PHIter}.csv'
-            mpisppy.utils.wxbarutils.write_W_to_file(self.PHB, w_fname,
-                sep_files=self.sep_files)"""
-       pass
+    def enditer(self, PHIter):
+        # Maybe you want to write here, but with an iteration specific name,
+        # and maybe just for some iterations.
+        pass
 
-
-    def post_everything(self):
+    def post_everything(self, PHIter, conv):
         if (self.w_fname):
-            fname = self.w_fname
-            mpisppy.utils.wxbarutils.write_W_to_file(self.PHB, fname,
+            mpisppy.utils.wxbarutils.write_W_to_file(self.PHB, self.w_fname,
                 sep_files=self.sep_files)
-        if (self.w_grad_fname):
-            grad_fname = f'grad_fname.csv'
-            #mpisppy.utils.wxbarutils.write_W_grad_to_file(self.PHB, grad_fname,
-            #sep_files=self.sep_files)
         if (self.x_fname):
             mpisppy.utils.wxbarutils.write_xbar_to_file(self.PHB, self.x_fname)
 

@@ -10,7 +10,7 @@
 
 from pysp.version import __version__
 
-from pyomo.common.plugin import PluginGlobals
+from pyomo.common.plugin_base import PluginGlobals
 PluginGlobals.add_env("pyomo")
 
 import pysp.pyro.smanager_pyro

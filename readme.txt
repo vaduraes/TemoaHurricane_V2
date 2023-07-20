@@ -8,10 +8,10 @@ To run this code you will need to install the two environments available at ./en
 > TEMOA_P310.yml will be used to run the deterministic and stochastic capacity expansion model
 
 On building the TEMOA_P310.yml environment some extra steps will be necessary:
-1) activate the temoa environment, go to the pyomo-main folder and run: < pip install . >
-2) go to the pysp-main folder and run: < python setup.py develop > this
+1) activate the temoa environment, go to the pyomo-main folder and run: < pip install -e . >
+2) go to the pysp-main folder and run: < pip install -e . > this
 will install a version of pysp compatible with the stochastic code we developed
-3) go to the mpi-sppy-main folder and run: < pip install .>
+3) go to the mpi-sppy-main folder and run: < pip install -e .>
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

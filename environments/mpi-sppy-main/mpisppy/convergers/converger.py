@@ -6,11 +6,6 @@
 
     Replaces the old implementation in which
     convergers were modules rather than classes.
-
-    DLW: as of  March 2023 note that user supplied convergers do not compute
-    ph.conv (which is computed as a scaled norm difference)
-    and both ph.conv and the user supplied converger, could trigger convergence
-    (see phbase.py)
 '''
 
 import abc
@@ -22,7 +17,7 @@ class Converger:
             opt (SPBase): The SPBase object for the current model
     '''
     def __init__(self, opt):
-        self.conv = None  # intended to be the value used for comparison
+        pass
 
     @abc.abstractmethod
     def is_converged(self):

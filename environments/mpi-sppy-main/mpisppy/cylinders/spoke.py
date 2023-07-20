@@ -97,20 +97,16 @@ class Spoke(SPCommunicator):
         window.Unlock(0)
 
         new_id = int(values[-1])
-        local_val = np.array((new_id,-new_id), 'i')
-        max_min_ids = np.zeros(2, 'i')
+        local_val = np.array((new_id,), 'i')
+        sum_ids = np.zeros(1, 'i')
         self.cylinder_comm.Allreduce((local_val, MPI.INT),
-                                     (max_min_ids, MPI.INT),
-                                     op=MPI.MAX)
+                                     (sum_ids, MPI.INT),
+                                     op=MPI.SUM)
 
-        max_id = max_min_ids[0]
-        min_id = -max_min_ids[1]
         # NOTE: we only proceed if all the ranks agree
         #       on the ID
-        if max_id != min_id:
+        if new_id != sum_ids[0] / self.cylinder_comm.size:
             return False
-
-        assert max_id == min_id == new_id
 
         if (new_id > self.remote_write_id) or (new_id < 0):
             self.remote_write_id = new_id

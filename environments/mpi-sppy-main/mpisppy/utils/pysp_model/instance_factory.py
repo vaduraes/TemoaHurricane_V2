@@ -504,12 +504,14 @@ class ScenarioTreeInstanceFactory:
                               % (self._data_directory))
 
     def __getstate__(self):
-        self.close()
-        raise NotImplementedError("Do not deepcopy or serialize this class")
+        print("Do not deepcopy or serialize this class- supresed")
+        # self.close()
+        # raise NotImplementedError("Do not deepcopy or serialize this class")
 
     def __setstate__(self,d):
-        self.close()
-        raise NotImplementedError("Do not deepcopy or serialize this class")
+        print("Do not deepcopy or serialize this class- supresed")
+        #self.close()
+        #raise NotImplementedError("Do not deepcopy or serialize this class")
 
     def close(self):
         for _,archive,tmpdir in self._archives:
