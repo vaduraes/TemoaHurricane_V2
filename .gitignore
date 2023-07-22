@@ -9,3 +9,4 @@ __pycache__
 !/InterpretResults/StochasticFiles/.gitignore
 !/InterpretResults/DeterministicFiles/.gitignore
 TemoaDeterministic/data_files/debug_logs/Complete_OutputLog.log
+TemoaStochastic/temoa_stochastic/temoa_model/config
