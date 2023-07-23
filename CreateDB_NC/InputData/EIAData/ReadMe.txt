@@ -20,3 +20,10 @@ have bad economic characteristics from ATB-2022 and are not competitive with Sol
 
 ------NC F-H Frame
 https://www.power-eng.com/emissions/policy-regulations/the-fall-of-the-f-class-turbine/#gref (transition to H-frame Natural Gass)
+
+
+--- Fuel prices
+https://www.eia.gov/state/seds/seds-data-fuel-prev.php
+AEO 22
+ReEDS
+Billion ton report Dry ton to MMBTU (e.g 60$/dry ton 120$/(13+8)=5.7$/MMBTU)
