@@ -4,6 +4,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - seaborn
   - asttokens=2.2.1=pyhd8ed1ab_0
   - attrs=22.2.0=pyh71513ae_0
   - backcall=0.2.0=pyh9f0ad1d_0

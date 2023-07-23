@@ -8,5 +8,14 @@ __pycache__
 !/TemoaDeterministic/data_files/debug_logs
 !/InterpretResults/StochasticFiles/.gitignore
 !/InterpretResults/DeterministicFiles/.gitignore
-TemoaDeterministic/data_files/debug_logs/Complete_OutputLog.log
-TemoaStochastic/temoa_stochastic/temoa_model/config
+/TemoaDeterministic/data_files/debug_logs/Complete_OutputLog.log
+/TemoaStochastic/temoa_stochastic/temoa_model/config
+/CreateDB_NC/OutputData/Figures/Load Centroids.png
+/CreateDB_NC/OutputData/NC_EnergySystem2023.sqlite
+/CreateDB_NC/OutputData/NC_EnergySystem2023.sql
+/CreateDB_NC/InputData/ExcelUserData/Temporary_ToHelpBuildDecks/TMP_ExistingCapacity_UniqueTechNameLv2.xlsx
+/CreateDB_NC/InputData/ExcelUserData/Temporary_ToHelpBuildDecks/TMP_ExistingCapacity_UniqueTechNameLv1.xlsx
+TemoaStochastic/WriteStochasticFiles/InputData/ProbabilityEachScenario.xlsx
+TemoaStochastic/WriteStochasticFiles/InputData/PercentageHurricaneDamage.xlsx
+TemoaStochastic/WriteStochasticFiles/InputData/NC_EnergySystem2023.sqlite
+TemoaStochastic/WriteStochasticFiles/InputData/NC_EnergySystem2023.sql
