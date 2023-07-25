@@ -135,7 +135,7 @@ def solve_ef(model, p_dot_dat, data_dir, temoa_options):
 
 #ScaleFlag most used to scale the objective function 
 
-    #Option that work for the NC 2^6 case: Takes 24h to solve about 2h to load the data and 19-22h to solve
+    #Option that work for the NC 2^6  24h case: Takes 24h to solve about 2h to load the data and 19-22h to solve
     #uses about 140GB of memory however, during ordering has a peak of 400GB that last 10min
     solver_options={'Threads':22, "Method":2, "crossover":0,"BarHomogeneous":1,"PreSparsify":2, "BarConvTol":5e-8,"ScaleFlag":2} #gurobi
 
