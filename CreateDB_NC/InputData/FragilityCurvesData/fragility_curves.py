@@ -63,6 +63,8 @@ from scipy.stats import norm
 
 
 def fragility(wind_mph, curve="inf_stiff"):
+    wind_mph=wind_mph*1.20 #Testing speed effect (remove for final simulation)
+
     # print(wind_mph)
     # print(type(wind_mph))
     # if type(wind_mph) is not np.ndarray:
