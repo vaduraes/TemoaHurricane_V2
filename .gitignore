@@ -10,9 +10,13 @@ __pycache__
 
 /TemoaDeterministic/data_files/*
 !/TemoaDeterministic/data_files/.gitignore
+/TemoaDeterministic/data_files/*
 
 CreateDB_NC/InputData/FragilityCurvesData/PercentageHurricaneDamage.xlsx
 CreateDB_NC/InputData/FragilityCurvesData/ProbabilityEachScenario.xlsx
+CreateDB_NC/OutputData/PercentageHurricaneDamage.xlsx
+CreateDB_NC/OutputData/ProbabilityEachScenario.xlsx
+
 TemoaStochastic/WriteStochasticFiles/InputData/ProbabilityEachScenario.xlsx
 TemoaStochastic/WriteStochasticFiles/InputData/PercentageHurricaneDamage.xlsx
 
