@@ -7,6 +7,7 @@ __pycache__
 *.rar
 *.dat
 ~$*
+*tmp
 
 /TemoaDeterministic/data_files/*
 !/TemoaDeterministic/data_files/.gitignore
