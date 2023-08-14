@@ -320,7 +320,7 @@ def PeriodCost_rule(M, p):
 
 
     loan_costs = sum(
-        M.V_Capacity[r, S_t, S_v]
+        M.V_Capacity[r, S_t, S_v]#VF- After the tech got damage you NEED to keep paying its investment cost
         * (
             value(M.CostInvest[r, S_t, S_v])
             * value(M.LoanAnnualize[r, S_t, S_v])
@@ -343,7 +343,7 @@ def PeriodCost_rule(M, p):
     )
 
     fixed_costs = sum(
-        M.V_Capacity[r, S_t, S_v]
+        M.V_Capacity[r, S_t, S_v]*value(M.CapReduction[r, p, S_t, S_v]) #VF- After the tech got damage you dont need to pay its fixed cost
         * (
             value(M.CostFixed[r, p, S_t, S_v])
             * (
@@ -1219,7 +1219,7 @@ In the :code:`RampUpDay` and :code:`RampUpSeason` constraints, we assume
             activity_sd / value(M.SegFrac[s, d])
             - activity_sd_prev / value(M.SegFrac[s, d_prev])
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])* value(M.CapReduction[r, p, t, v]) * value(M.RampUp[r, t]) #VF
+        expr_right = M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) * value(M.RampUp[r, t]) #VF
         expr = expr_left <= expr_right
     else:
         return Constraint.Skip
@@ -1270,7 +1270,7 @@ constraint to limit ramp down rates between any two adjacent time slices.
             activity_sd / value(M.SegFrac[s, d])
             - activity_sd_prev / value(M.SegFrac[s, d_prev])
         ) / value(M.CapacityToActivity[r,t])
-        expr_right = -(M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])*value(M.CapReduction[r, p, t, v]) * value(M.RampDown[r, t])) #VF
+        expr_right = -(M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v])* value(M.RampDown[r, t])) #VF
         expr = expr_left >= expr_right
     else:
         return Constraint.Skip
