@@ -1,4 +1,4 @@
-#-----------------------------------------------------
+#----------------------------------------------------- Deterministic
 # This is a sample configuration file for Temoa
 # It allows you to specify (and document) all run-time model options 
 # Legal chars in path: a-z A-Z 0-9 - _ \ / . : 

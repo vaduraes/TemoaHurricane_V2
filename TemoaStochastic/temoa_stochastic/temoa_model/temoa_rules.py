@@ -312,12 +312,35 @@ def PeriodCost_rule(M, p):
     GDR = value(M.GlobalDiscountRate)
     MPL = M.ModelProcessLife
     x = 1 + GDR  # convenience variable, nothing more.
-
+    
 
     if  value(M.MyopicBaseyear) != 0:
       P_0 = value(M.MyopicBaseyear)
 
 
+
+    # loan_costs = sum(
+    #     M.V_Capacity[r, S_t, S_v]#VF- After the tech got damage you NEED to keep paying its investment cost
+    #     * (
+    #         value(M.CostInvest[r, S_t, S_v])
+    #         * value(M.LoanAnnualize[r, S_t, S_v])
+    #         * (
+    #             value(M.LifetimeLoanProcess[r, S_t, S_v])
+    #             if not GDR
+    #             else (
+    #                 x ** (P_0 - S_v + 1)
+    #                 * (1 - x ** (-value(M.LifetimeLoanProcess[r, S_t, S_v])))
+    #                 / GDR
+    #             )
+    #         )
+    #     )
+    #     * (
+    #         (1 - x ** (-min(value(M.LifetimeProcess[r, S_t, S_v]), P_e - S_v)))
+    #         / (1 - x ** (-value(M.LifetimeProcess[r, S_t, S_v])))
+    #     )
+    #     for r, S_t, S_v in M.CostInvest.sparse_iterkeys()
+    #     if S_v == p
+    # )
 
     loan_costs = sum(
         M.V_Capacity[r, S_t, S_v]#VF- After the tech got damage you NEED to keep paying its investment cost
@@ -334,13 +357,15 @@ def PeriodCost_rule(M, p):
                 )
             )
         )
-        * (
-            (1 - x ** (-min(value(M.LifetimeProcess[r, S_t, S_v]), P_e - S_v)))
+        *((1-M.CapReduction[r,2050, S_t, S_v]) + #VF Needs some improvement in the future
+            M.CapReduction[r,2050, S_t, S_v]*((1 - x ** (-min(value(M.LifetimeProcess[r, S_t, S_v]), P_e - S_v)))
             / (1 - x ** (-value(M.LifetimeProcess[r, S_t, S_v])))
         )
+            )
         for r, S_t, S_v in M.CostInvest.sparse_iterkeys()
         if S_v == p
     )
+
 
     fixed_costs = sum(
         M.V_Capacity[r, S_t, S_v]*value(M.CapReduction[r, p, S_t, S_v]) #VF- After the tech got damage you dont need to pay its fixed cost

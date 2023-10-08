@@ -129,7 +129,7 @@ def pformat_results ( pyomo_instance, pyomo_result, options ):
 	svars = defaultdict( lambda: defaultdict( float ))   
 	
 	con_info = list()
-	epsilon = 1e-9   # threshold for "so small it's zero"
+	epsilon = 1e-5   # threshold for "so small it's zero"
 
 	emission_keys = { (r, i, t, v, o) : set() for r, e, i, t, v, o in m.EmissionActivity }
 	for r, e, i, t, v, o in m.EmissionActivity:
@@ -255,8 +255,8 @@ def pformat_results ( pyomo_instance, pyomo_result, options ):
 
 			icost = value( m.V_Capacity[r, t, v] )
 			if abs(icost) < epsilon: continue
-			icost *= value( m.CostInvest[r, t, v] )*(
-				(
+			icost *= value( m.CostInvest[r, t, v] )*((1-m.CapReduction[r,2050, t, v]) + 
+				m.CapReduction[r,2050, t, v]*( #VF 10/08/2023
 					1 -  x**( -min( value(m.LifetimeProcess[r, t, v]), P_e - v ) )
 				)/(
 					1 -  x**( -value( m.LifetimeProcess[r, t, v] ) ) 
@@ -274,7 +274,7 @@ def pformat_results ( pyomo_instance, pyomo_result, options ):
 
 
 		for r, p, t, v in m.CostFixed.sparse_iterkeys():
-			fcost = value( m.V_Capacity[r, t, v] )
+			fcost = value( m.V_Capacity[r, t, v]*value(m.CapReduction[r, p, t, v])) #VF 10/07/2023
 			if abs(fcost) < epsilon: continue
 	
 			fcost *= value( m.CostFixed[r, p, t, v] )
