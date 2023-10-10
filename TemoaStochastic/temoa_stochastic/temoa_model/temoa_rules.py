@@ -81,7 +81,7 @@ possibility.
         return value(M.CapacityFactorProcess[r, s, d, t, v]) \
             * value(M.CapacityToActivity[r, t]) * value(M.SegFrac[s, d]) \
             * value(M.ProcessLifeFrac[r, p, t, v]) \
-            * M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) == useful_activity + sum( \
+            * M.V_Capacity[r, t, v]*(value(M.CapReduction[r, p, t, v])) == useful_activity + sum( \
             M.V_Curtailment[r, p, s, d, S_i, t, v, S_o] \
             for S_i in M.processInputs[r, p, t, v] \
             for S_o in M.ProcessOutputsByInput[r, p, t, v, S_i])#Victor Faria 07/07/23
@@ -90,7 +90,7 @@ possibility.
         * value(M.CapacityToActivity[r, t]) \
         * value(M.SegFrac[s, d]) \
         * value(M.ProcessLifeFrac[r, p, t, v]) \
-        * M.V_Capacity[r, t, v]*value(M.CapReduction[r, p, t, v]) >= useful_activity #Victor Faria 07/07/23
+        * M.V_Capacity[r, t, v]*(value(M.CapReduction[r, p, t, v]))  >= useful_activity #Victor Faria 07/07/23
 
 
 def CapacityAnnual_Constraint(M, r, p, t, v):
