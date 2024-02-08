@@ -35,3 +35,4 @@ InterpretResults/DeterministicFiles/NC_EnergySystem2023sqlite
 CreateDB_NC/OutputData/AverageNumberOfEventsPerScenario.xlsx
 CreateDB_NC/InputData/FragilityCurvesData/AverageNumberOfEventsPerScenario.xlsx
 TemoaStochastic/WriteStochasticFiles/InputData/AverageNumberOfEventsPerScenario.xlsx
+Doc/V0/StochasticModelProgressList.xlsx
