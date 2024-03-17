@@ -312,6 +312,7 @@ def PeriodCost_rule(M, p):
     GDR = value(M.GlobalDiscountRate)
     MPL = M.ModelProcessLife
     x = 1 + GDR  # convenience variable, nothing more.
+
     
 
     if  value(M.MyopicBaseyear) != 0:
@@ -357,14 +358,15 @@ def PeriodCost_rule(M, p):
                 )
             )
         )
-        *((1-M.CapReduction[r,2050, S_t, S_v]) + #VF Needs some improvement in the future
-            M.CapReduction[r,2050, S_t, S_v]*((1 - x ** (-min(value(M.LifetimeProcess[r, S_t, S_v]), P_e - S_v)))
+        *((1-M.CapReduction[r,M.time_future[-2], S_t, S_v]) + #VF Needs some improvement in the future
+            M.CapReduction[r,M.time_future[-2], S_t, S_v]*((1 - x ** (-min(value(M.LifetimeProcess[r, S_t, S_v]), P_e - S_v)))
             / (1 - x ** (-value(M.LifetimeProcess[r, S_t, S_v])))
         )
             )
         for r, S_t, S_v in M.CostInvest.sparse_iterkeys()
         if S_v == p
     )
+    #M.CapReduction[r,M.time_future[-2], S_t, S_v]): Is a way to account all the damage that happen inside the simulation horizon. which you do not partition with the future as there are no assets that are damaged that could benefit the future
 
 
     fixed_costs = sum(

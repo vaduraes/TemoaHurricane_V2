@@ -26,7 +26,7 @@ TemoaStochastic/WriteStochasticFiles/InputData/PercentageHurricaneDamage.xlsx
 CreateDB_NC/InputData/ExcelUserData/Temporary_ToHelpBuildDecks/TMP_ExistingCapacity_UniqueTechNameLv1.xlsx
 CreateDB_NC/InputData/ExcelUserData/Temporary_ToHelpBuildDecks/TMP_ExistingCapacity_UniqueTechNameLv2.xlsx
 
-/TemoaStochastic/temoa_stochastic/temoa_model/config
+#/TemoaStochastic/temoa_stochastic/temoa_model/config
 TemoaStochastic/WriteStochasticFiles/InputData/NC_EnergySystem2023.sql
 
 CreateDB_NC/OutputData/NC_EnergySystem2023.sql

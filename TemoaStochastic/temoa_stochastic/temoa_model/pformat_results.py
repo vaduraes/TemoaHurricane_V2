@@ -252,16 +252,17 @@ def pformat_results ( pyomo_instance, pyomo_result, options ):
 		svars[ 'Objective' ]["('"+obj_name+"')"] = obj_value
 
 		for r, t, v in m.CostInvest.sparse_iterkeys():   # Returns only non-zero values
-
+      
+			#  #M.CapReduction[r,M.time_future[-2], S_t, S_v]): Is a way to account all the damage that happen inside the simulation horizon. which you do not partition with the future as there are no assets that are damaged that could benefit the future
 			icost = value( m.V_Capacity[r, t, v] )
 			if abs(icost) < epsilon: continue
-			icost *= value( m.CostInvest[r, t, v] )*((1-m.CapReduction[r,2050, t, v]) + 
-				m.CapReduction[r,2050, t, v]*( #VF 10/08/2023
+			icost *= value( m.CostInvest[r, t, v] )*((1-m.CapReduction[r,m.time_future[-2], t, v]) + 
+				m.CapReduction[r,m.time_future[-2], t, v]*( #VF 10/08/2023
 					1 -  x**( -min( value(m.LifetimeProcess[r, t, v]), P_e - v ) )
 				)/(
 					1 -  x**( -value( m.LifetimeProcess[r, t, v] ) ) 
 				)
-			)
+			) 
 			svars[	'Costs'	][ 'V_UndiscountedInvestmentByProcess', r, t, v] += icost
 	
 			icost *= value( m.LoanAnnualize[r, t, v] )
