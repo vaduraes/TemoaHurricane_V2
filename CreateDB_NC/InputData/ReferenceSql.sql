@@ -222,6 +222,15 @@ CREATE TABLE "LifetimeProcess" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
 
+CREATE TABLE "ConstructionTime" (
+	"tech"	text,
+	"construction_time"	real,
+	"construction_time_notes"	text,
+	PRIMARY KEY("tech","vintage"),
+	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods"),
+	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
+);
+
 CREATE TABLE "LifetimeTech" (
 	"regions"	text,
 	"tech"	text,

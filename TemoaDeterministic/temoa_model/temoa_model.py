@@ -152,6 +152,7 @@ def temoa_create_model(name="Temoa"):
 
     M.LifetimeTech = Param(M.RegionalIndices, M.tech_all, default=40)
     M.LifetimeLoanTech = Param(M.RegionalIndices, M.tech_all, default=10)
+    M.ConstructionTime = Param(M.tech_all, default=0) #VADF 3/18/2024 - Hurricane model
 
     M.LifetimeProcess_rtv = Set(dimen=3, initialize=LifetimeProcessIndices)
     M.LifetimeProcess = Param(M.LifetimeProcess_rtv, mutable=True)
@@ -176,7 +177,7 @@ def temoa_create_model(name="Temoa"):
     M.CostFixedVintageDefault_rtv = Set(
         dimen=3, initialize=lambda M: set((r, t, v) for r, p, t, v in M.CostFixed_rptv)
     )
-    M.CostFixedVintageDefault = Param(M.CostFixedVintageDefault_rtv)
+    M.CostFixedVintageDefault = Param(M.CostFixedVintageDefault_rtv) 
 
     M.CostInvest_rtv = Set(dimen=3, initialize=CostInvestIndices)
     M.CostInvest = Param(M.CostInvest_rtv)

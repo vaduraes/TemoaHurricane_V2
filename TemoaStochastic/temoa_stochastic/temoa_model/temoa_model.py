@@ -152,6 +152,7 @@ def temoa_create_model(name="Temoa"):
 
     M.LifetimeTech = Param(M.RegionalIndices, M.tech_all, default=40)
     M.LifetimeLoanTech = Param(M.RegionalIndices, M.tech_all, default=10)
+    M.ConstructionTime = Param(M.tech_all, default=0) #VADF 3/18/2024 - Hurricane model
 
     M.LifetimeProcess_rtv = Set(dimen=3, initialize=LifetimeProcessIndices)
     M.LifetimeProcess = Param(M.LifetimeProcess_rtv, mutable=True)

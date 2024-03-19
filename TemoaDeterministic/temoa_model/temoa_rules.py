@@ -75,6 +75,7 @@ possibility.
     for S_o in M.ProcessOutputsByInput[r, p, t, v, S_i]
     )
 
+##This is the original constraint without considering the construction time
     if t in M.tech_curtailment:
         # If technologies are present in the curtailment set, then enough
         # capacity must be available to cover both activity and curtailment.
@@ -91,7 +92,9 @@ possibility.
         * value(M.SegFrac[s, d]) \
         * value(M.ProcessLifeFrac[r, p, t, v]) \
         * M.V_Capacity[r, t, v] >= useful_activity
+    
 
+            
 
 def CapacityAnnual_Constraint(M, r, p, t, v):
     r"""
@@ -313,6 +316,7 @@ def PeriodCost_rule(M, p):
     MPL = M.ModelProcessLife
     x = 1 + GDR  # convenience variable, nothing more.
 
+    
 
     if  value(M.MyopicBaseyear) != 0:
       P_0 = value(M.MyopicBaseyear)
@@ -341,20 +345,37 @@ def PeriodCost_rule(M, p):
         for r, S_t, S_v in M.CostInvest.sparse_iterkeys()
         if S_v == p
     )
+    
 
-    fixed_costs = sum(
-        M.V_Capacity[r, S_t, S_v]
-        * (
-            value(M.CostFixed[r, p, S_t, S_v])
-            * (
-                value(MPL[r, p, S_t, S_v])
-                if not GDR
-                else (x ** (P_0 - p + 1) * (1 - x ** (-value(MPL[r, p, S_t, S_v]))) / GDR)
-            )
-        )
-        for r, S_p, S_t, S_v in M.CostFixed.sparse_iterkeys()
-        if S_p == p
-    )
+    #VADF
+    fixed_costs=0
+    for r, S_p, S_t, S_v in M.CostFixed.sparse_iterkeys():
+        
+        if S_p == p:
+            start_year = S_v + value(M.ConstructionTime[S_t]) #getting the first year of the technology
+            
+            #Start paying after it is built
+            if start_year>S_p and start_year<=S_p+value(M.PeriodLength[S_p]):      
+                          
+                fixed_costs=fixed_costs + M.V_Capacity[r, S_t, S_v] * (
+                    value(M.CostFixed[r, S_p, S_t, S_v])
+                    * (
+                        value(MPL[r, S_p, S_t, S_v])
+                        if not GDR
+                        else (x ** (P_0 - p - (start_year-S_p)+ 1) * (1 - x ** (-value(MPL[r, S_p, S_t, S_v]))) / GDR)
+                    )# (start_year-S_p) is the period the technology was under construction onf the interval
+                )
+            
+            else:    
+                fixed_costs=fixed_costs + M.V_Capacity[r, S_t, S_v] * (
+                    value(M.CostFixed[r, S_p, S_t, S_v])
+                    * (
+                        value(MPL[r, S_p, S_t, S_v])
+                        if not GDR
+                        else (x ** (P_0 - p + 1) * (1 - x ** (-value(MPL[r, S_p, S_t, S_v]))) / GDR)
+                    )
+                )
+
 
     variable_costs = sum(
         M.V_FlowOut[r, p, s, d, S_i, S_t, S_v, S_o]
@@ -2101,7 +2122,15 @@ output (i.e., members of the :math:`tech_annual` set) are considered.
 # ---------------------------------------------------------------
 def ParamModelProcessLife_rule(M, r, p, t, v):
     life_length = value(M.LifetimeProcess[r, t, v])
+    
+    
     tpl = min(v + life_length - p, value(M.PeriodLength[p]))
+    
+    #VADF
+    #We still need to look at the time the technology is in construction
+    start_year = v + value(M.ConstructionTime[t]) #getting the first year of the technology
+    if start_year>p and start_year<=p+value(M.PeriodLength[p]):
+        tpl = v + value(M.PeriodLength[p]) - start_year 
 
     return tpl
 
@@ -2130,17 +2159,37 @@ that will cease operation (rust out, be decommissioned, etc.) between periods,
 calculate the fraction of the period that the technology is able to
 create useful output.
 """
-    eol_year = v + value(M.LifetimeProcess[r, t, v])
-    frac = eol_year - p
+### VADF modifications for the Hurricane Model
+    #Looking for the end of life of the technology
+    eol_year = v + value(M.LifetimeProcess[r, t, v]) #getting the last year of the technology
+    frac = eol_year - p #Number of year until end of life from period p
     period_length = value(M.PeriodLength[p])
+    
+    frac_return=1
     if frac >= period_length:
         # try to avoid floating point round-off errors for the common case.
-        return 1
+        frac_return = 1
 
         # number of years into final period loan is complete
+    else:
+        frac /= float(period_length)
+        frac_return = frac
+    
+    
+    #Looking for the start of life of the technology considering the construction time. VADF- Hurricane Model
+    # We ignore this for the first period to avoid infisibility as the model did not prepared the constructions for the first period
+    if p>value(M.time_optimize.at(1)):
+        start_year = v + value(M.ConstructionTime[t]) #getting the first year of the technology
+        frac = p + period_length - start_year
+        
+        if frac <= 0: #The technology is not yet in operation
+            frac_return=0
+            
+        if frac > 0 and frac <= period_length:
+            frac_return=frac/float(period_length)
 
-    frac /= float(period_length)
-    return frac
+    
+    return frac_return
 
 
 def ParamLoanAnnualize_rule(M, r, t, v):

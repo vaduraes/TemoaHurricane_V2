@@ -324,7 +324,7 @@ def CreateLifetimes ( M ):
 	if unspecified_tech_lives:
 		# LPR._constructed = False
 		for r, t, v in unspecified_tech_lives:
-			LPR[r, t, v] = M.LifetimeTech[ (r, t) ]
+			LPR[r, t, v] = M.LifetimeTech[ (r, t) ] + M.ConstructionTime[(t)] #VADF: Added construction time to lifetime (Hurricane model). We did not use life process on the .sql otherwise this would not work
 		# LPR._constructed = True
 
 

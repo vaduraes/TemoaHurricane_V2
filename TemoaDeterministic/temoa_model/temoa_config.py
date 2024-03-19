@@ -157,6 +157,7 @@ def db_2_dat(ifile, ofile, options):
 		['param','LifetimeTech',              '',                    '',             2],
 		['param','LifetimeProcess',           '',                    '',             3],
 		['param','LifetimeLoanTech',          '',                    '',             2],
+ 		['param','ConstructionTime',          '',                    '',             1], #VADF 3/18/24 :Hurricane models
 		['param','CapacityFactorTech',        '',                    '',             4],
 		['param','CapacityFactorProcess',     '',                    '',             5],
 		['param','Efficiency',                '',                    '',             5],

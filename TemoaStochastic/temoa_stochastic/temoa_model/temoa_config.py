@@ -104,7 +104,7 @@ def db_2_dat(ifile, ofile, options):
 				f.write(str_row)
 				print(str_row)
 		f.write(';\n\n')
-
+ 
 	#[set or param, table_name, DAT fieldname, flag (if any), index (where to insert '#')
 	table_list = [
 		['set',  'time_periods',              'time_exist',          'e',            0],
@@ -165,6 +165,7 @@ def db_2_dat(ifile, ofile, options):
 		['param','CostFixed',                 '',                    '',             4],
 		['param','CostVariable',              '',                    '',             4],
 		['param','CapacityCredit',            '',                    '',             4],
+ 		['param','ConstructionTime',          '',                    '',             1], #VADF 3/18/24 :Hurricane models
 		['param','RampUp',                    '',                    '',             2],
 		['param','RampDown',                  '',                    '',             2],
 		['param','StorageInitFrac',           '',                    '',             3],
